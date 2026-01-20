@@ -1,0 +1,129 @@
+---
+title: Changelog
+description: Track the latest updates, new features, and improvements to Compitio as it progresses through development.
+---
+
+## Recent Releases
+
+Stay updated with Compitio's development progress. You review changes here to understand new capabilities, fixes, and how they impact your integration.
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added real-time competition dashboards for live leaderboards
+- Introduced webhook support for event notifications
+
+## Improvements
+
+- Enhanced API rate limiting with customizable thresholds
+- Optimized database queries for `<50ms` average response times
+
+## Bug Fixes
+
+- Fixed authentication token refresh loops
+- Resolved dashboard rendering issues on mobile devices
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Launched user management API endpoints
+- Added multi-language support for competition descriptions
+
+## Bug Fixes
+
+- Patched security vulnerability in file upload handling
+- Corrected pagination errors in leaderboard queries
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["breaking", "feature"]}>
+
+## Breaking Changes
+
+- Updated API base URL from `{old-url}` to `https://api.example.com/v1`
+
+## New Features
+
+- Core competition creation and management APIs
+- Basic authentication with API keys
+
+## Initial Setup
+
+- First stable release with SDK support
+
+</Update>
+
+## Upgrading Compitio SDK
+
+<Callout kind="info">
+Review the [migration guide](https://docs.example.com/migration) for detailed steps. Test in staging before production deployment.
+</Callout>
+
+Follow these steps to upgrade your Compitio integration.
+
+<Steps>
+  <Step title="Backup Current Setup" icon="database">
+    Export your current configuration and data.
+
+    ```bash
+    compitio-cli export --file=backup.json
+    ```
+  </Step>
+  <Step title="Update SDK" icon="download">
+    Install the latest version using your package manager.
+
+    <CodeGroup tabs="npm,yarn">
+    ````bash
+    npm install compitio-sdk@latest
+    ````
+
+    ````bash
+    yarn add compitio-sdk@latest
+    ````
+    </CodeGroup>
+  </Step>
+  <Step title="Update Configuration" icon="settings">
+    Replace old endpoints with new ones.
+
+    ````javascript
+    // Old
+    const client = new CompitioClient({ baseURL: 'https://api.example.com/v0' });
+
+    // New
+    const client = new CompitioClient({ baseURL: 'https://api.example.com/v1' });
+    ````
+  </Step>
+  <Step title="Test Integration" icon="check-circle">
+    Run your test suite to verify functionality.
+  </Step>
+</Steps>
+
+## Development Milestones
+
+<Columns cols={3}>
+  <Card title="Alpha Release" icon="star" href="#">
+    Completed core API architecture and initial testing.
+  </Card>
+  <Card title="Beta Launch" icon="rocket" href="#">
+    Public beta with first user feedback integration.
+  </Card>
+  <Card title="v1.0 Stable" icon="check" href="#">
+    Production-ready with full documentation.
+  </Card>
+</Columns>
+
+## Upcoming Features
+
+<Expandable title="Preview of v1.3.0" default-open="false">
+
+You can expect AI-powered competition matching and advanced analytics in the next release. Prepare by reviewing the [feature preview docs](https://docs.example.com/preview).
+
+</Expandable>
+
+<Callout kind="tip">
+Subscribe to the newsletter at `https://compitio.com/newsletter` for release notifications.
+</Callout>
